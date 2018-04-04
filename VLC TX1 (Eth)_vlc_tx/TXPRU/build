@@ -1,0 +1,8 @@
+echo "Compiling the EBB-ADC overlay from .dts to .dtbo"
+dtc -O dtb -o EBB-PRU-DAC-00A0.dtbo -b 0 -@ EBB-PRU-DAC.dts
+
+echo "Building the TX PRU code"
+pasm -b TXPRU.p
+
+echo "Building the TX PRU binary application"
+gcc TXPRU.c -o txpru -lpthread -lprussdrv

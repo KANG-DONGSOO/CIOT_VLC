@@ -1,0 +1,1 @@
+cmd_/home/machinekit/ourvlc/vlc.ko := ld -EL -r  -T /usr/src/linux-headers-3.8.13xenomai-bone53/scripts/module-common.lds --build-id  -o /home/machinekit/ourvlc/vlc.ko /home/machinekit/ourvlc/vlc.o /home/machinekit/ourvlc/vlc.mod.o

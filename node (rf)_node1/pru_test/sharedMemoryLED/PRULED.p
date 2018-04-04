@@ -1,0 +1,22 @@
+.origin	0
+.entrypoint START
+
+START:
+	MOV r1,	0x00000000
+	MOV	r4,	0x00010000
+
+LED_LOW:
+	CLR		r30.t1
+	QBA		CHECK_STATE
+
+LED_HIGH:
+	SET		r30.t1
+	QBA		CHECK_STATE
+	
+CHECK_STATE:
+	LBBO	r5,	r4,	0,	1
+	QBEQ	LED_HIGH,	r5,	1
+	QBA		LED_LOW	 //ELSE
+	
+END:
+	HALT
